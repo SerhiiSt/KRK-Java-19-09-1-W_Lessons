@@ -1,0 +1,5 @@
+Answer the questions:
+1. Which loop more convenient for first advanced task?
+   for loop
+2. Which loop more convenient for second?
+   for loop

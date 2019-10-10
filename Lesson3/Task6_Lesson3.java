@@ -25,12 +25,9 @@ public class Task6_Lesson3{
     private static boolean isPrimeNumber(int numberToCheck) {
 
         
-        int reminder;
-        
         for (int index = 2;index < numberToCheck / 2;index++) {
-            reminder = numberToCheck % index;
             
-            if (reminder == 0) {
+            if (numberToCheck % index == 0) {
                 return false;
             }
         }

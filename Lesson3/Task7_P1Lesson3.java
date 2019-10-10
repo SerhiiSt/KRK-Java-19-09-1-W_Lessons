@@ -6,9 +6,9 @@ public class Task7_P1Lesson3{
         for (int i = 0; i < args.length; i++) {
             text = args[i];
         }
-        char[] char_array = text.toCharArray();
+        char[] charArray = text.toCharArray();
 
-        for (char character: char_array) {
+        for (char character: charArray) {
             System.out.println(character);
         }
     }

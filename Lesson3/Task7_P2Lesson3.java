@@ -7,8 +7,8 @@ public class Task7_P2Lesson3{
             text = args[i];
         }
 
-        for(int k=0;k<text.length();k++){
-            System.out.println(text.charAt(k));
+        for(int i=0;i<text.length();i++){
+            System.out.println(text.charAt(i));
         }
 
 

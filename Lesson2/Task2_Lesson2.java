@@ -30,9 +30,7 @@ public class Task2_Lesson2{
                                    result = (price - price*0.30);
                                    System.out.printf("Discounted price is %.2f%n",result);
                                    break;
-                                   
-                    default:       System.out.println("Something went wrong.Please, check you values again!");               
-              
+                             
               }
               
        }

@@ -22,7 +22,7 @@ public class Task2_V2_Lesson2{
                      
                                    
                     default:       System.out.println("Please, stop!");
-                                   break;               
+                                              
               
               }
               

@@ -19,13 +19,16 @@ public class Task2_Lesson2{
                 discount = price * 0.8;
                 break;
 
+
             case 2:
                 discount = price * 0.25;
                 break;
+
+
             case 3:
 
                 discount = price * 0.30;
-                break;
+
 
         }
         System.out.printf("Discounted price is %.2f%n", price - discount);

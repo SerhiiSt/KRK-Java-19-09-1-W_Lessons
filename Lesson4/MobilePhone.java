@@ -6,7 +6,6 @@ public class MobilePhone {
     private String model;
     private int batteryCapacity;
     private int batteryAmount;
-    private int memory;
     private int freeMemory;
 
     public MobilePhone2(String brand, String model, int batteryCapacity, int memory) {
@@ -14,7 +13,6 @@ public class MobilePhone {
         this.model = model;
         this.batteryCapacity = batteryCapacity;
         this.batteryAmount = batteryCapacity;
-        this.memory = memory;
         this.freeMemory = memory;
     }
 

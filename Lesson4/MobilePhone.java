@@ -8,7 +8,7 @@ public class MobilePhone {
     private int batteryAmount;
     private int freeMemory;
 
-    public MobilePhone2(String brand, String model, int batteryCapacity, int memory) {
+    public MobilePhone(String brand, String model, int batteryCapacity, int memory) {
         this.brand = brand;
         this.model = model;
         this.batteryCapacity = batteryCapacity;

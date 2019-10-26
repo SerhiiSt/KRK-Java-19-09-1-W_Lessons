@@ -1,6 +1,6 @@
 package pl.itacademy.lesson4;
 
-class Cat {
+public class Cat {
 
     private String name;
     private boolean isHungry;

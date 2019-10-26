@@ -1,4 +1,4 @@
-package pl.itcacademy.lesson2;
+package pl.itacademy.lesson2;
 
 import java.util.ArrayList;
 import java.util.Scanner;

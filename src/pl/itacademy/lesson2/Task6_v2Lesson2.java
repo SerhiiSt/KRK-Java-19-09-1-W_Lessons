@@ -1,3 +1,4 @@
+package pl.itacademy.lesson2;
 
 public class Task6_v2Lesson2{
 

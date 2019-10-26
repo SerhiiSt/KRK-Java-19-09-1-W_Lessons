@@ -1,4 +1,4 @@
-package pl.itcacademy.lesson2;
+package pl.itacademy.lesson2;
 
 public class Task7_v4Lesson2{
 

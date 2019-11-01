@@ -2,15 +2,13 @@ package pl.itacademy.lesson4;
 
 public class Car {
 
+
     private String name;
     private String model;
     private Engine engine;
 
     private int fuelCapacity;
     private int remainingFuel;
-    private int countStart = 0;
-    private int countStop = 0;
-
 
     public Car(String name, String model, int fuelCapacity, Engine engine) {
         this.name = name;
@@ -29,67 +27,48 @@ public class Car {
     }
 
     public void startEngine() {
-        countStart++;
-        if (countStart > 1) {
-            System.out.println(engine.name + " engine has been started already in " + name + " " + model);
-            countStart = 0;
+        if (!engine.isStarted()) {
+            System.out.println("Car " + name + " " + model + " is starting " + engine.getName() + " engine");
+            engine.start();
         } else {
-            engine.isStarted = true;
-            showState();
+            engine.start();
         }
+
 
     }
 
 
     public void stopEngine() {
-        countStop++;
-        if (countStop > 1) {
-            System.out.println(engine.name + " engine has been stopped already in " + name + " " + model);
-            countStop = 0;
-        } else {
-            engine.isStarted = false;
-            showState();
-        }
-    }
 
-    private void showState() {
-        if (engine.isStarted) {
-
-            System.out.println("Car " + name + " " + model + " is starting " + engine.name + " engine");
-            engine.startEngine();
-
+        if (engine.isStarted()) {
+            System.out.println("Car " + name + " " + model + " is stopping " + engine.getName() + " engine");
+            engine.stop();
 
         } else {
-            System.out.println("Car " + name + " " + model + " is stopping " + engine.name + " engine");
-            engine.stopEngine();
+
+            engine.stop();
         }
     }
 
 
     public void drive(int speed, int length) {
 
-        if (engine.isStarted) {
+        if (engine.isStarted()) {
 
 
-            int fuelUse = (length * 10) / 50;
+            int maXSpeed = engine.getHorsepower() * 2;
+            int fuelUsed = (length * 10) / 50;
 
 
-            int maxSpeed = engine.getHorsepower() * 2;
-
-            if (speed < maxSpeed) {
-
-
-                System.out.println("Car " + name + " " + model + " has been driven for " + length + " km " +
-                        " with speed " + speed + " km/h");
-                fuelCheck(fuelUse);
-
+            if (speed < maXSpeed) {
+                System.out.printf("Car %s %s has been driven for %d km  with speed %s km/h%n", name, model, length, speed);
+                checkRemainingFuel(fuelUsed);
 
             } else {
+                System.out.printf("Car %s %s has been driven for %d km  with max speed %s km/h%n", name, model, length, maXSpeed);
+                System.out.println("speed has been limited cause of engine horsepower.");
+                checkRemainingFuel(fuelUsed);
 
-                System.out.println("Car " + name + " " + model + " has been driven for " + length + " km " +
-                        " with  max speed " + maxSpeed + " km/h");
-                fuelCheck(fuelUse);
-                System.out.println("Speed has been limited cause of engine horsepower.");
             }
 
         } else {
@@ -100,15 +79,16 @@ public class Car {
 
     }
 
-    public void fuelCheck(int fuelUse) {
 
-        if (fuelCapacity > fuelUse) {
+    private void checkRemainingFuel(int fuelUsed) {
 
-            fuelCapacity = fuelCapacity - fuelUse;
+        if (fuelCapacity > fuelUsed) {
+
+            fuelCapacity = fuelCapacity - fuelUsed;
 
             System.out.println("Remaining fuel: " + fuelCapacity + "L");
 
-        } else if (fuelCapacity > 0) {
+        } else if (fuelCapacity >= 0) {
 
             fuelCapacity = 0;
             System.out.println("Car " + name + " " + model + " can't be driven. Tank is empty");
@@ -118,7 +98,6 @@ public class Car {
             System.out.println("Tank is empty");
         }
     }
-
 
 }
 

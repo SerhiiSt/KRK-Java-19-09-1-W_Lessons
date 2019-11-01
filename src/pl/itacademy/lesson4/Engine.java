@@ -3,16 +3,34 @@ package pl.itacademy.lesson4;
 
 public class Engine {
 
-    String name;
-    int horsepower;
-    int capacity;
-    boolean isStarted;
+    private String name;
+    private int horsepower;
+    private int capacity;
+    private boolean isStarted;
 
     public Engine(String name, int horsepower, int capacity) {
         this.name = name;
         this.horsepower = horsepower;
         this.capacity = capacity;
         isStarted = false;
+
+    }
+
+
+    public boolean isStarted() {
+        return isStarted;
+    }
+
+    public void setStarted(boolean started) {
+        isStarted = started;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getCapacity() {
@@ -31,12 +49,24 @@ public class Engine {
         this.horsepower = horsepower;
     }
 
-    public void startEngine(){
-        System.out.println(name+ " engine has been started");
+    public void start() {
+        if (!isStarted) {
+            isStarted = true;
+            System.out.println(name + " engine has been started");
+
+        } else {
+            System.out.println(name + " engine has been started already ");
+
+        }
     }
 
-    public void stopEngine(){
-        System.out.println(name+ " engine has been stopped");
+    public void stop() {
+        if (isStarted) {
+            isStarted = false;
+            System.out.println(name + " engine has been stopped");
+        } else {
+            System.out.println(name + " engine has been stopped already");
+        }
     }
 
 

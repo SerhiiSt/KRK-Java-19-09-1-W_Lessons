@@ -3,7 +3,7 @@ package pl.itacademy.lesson6;
 
 public class Words {
 
-    public static void checkTheLengthOfWords(String words) {
+    public void checkTheLengthOfWords(String words) {
 
         String[] text = words.split(" ");
         String longWord = text[0];
@@ -28,16 +28,8 @@ public class Words {
             }
         }
 
-
         System.out.println("List of longest words is " + "[" + listOfLongestWords + "]");
         System.out.println("List of shortest words is " + "[" + listOfShortestWords + "]");
 
     }
-
-    public static void main(String[] args) {
-        String text = "For given text find the longest and the shortest words";
-        checkTheLengthOfWords(text);
-
-    }
-
 }

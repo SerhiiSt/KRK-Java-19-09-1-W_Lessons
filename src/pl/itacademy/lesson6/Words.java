@@ -3,33 +3,37 @@ package pl.itacademy.lesson6;
 
 public class Words {
 
-    public void checkTheLengthOfWords(String words) {
+    private static void checkTheLengthOfWords(String words) {
 
-        String[] text = words.split(" ");
-        String longWord = text[0];
-        String shortestWord = text[0];
-        String listOfLongestWords = "";
-        String listOfShortestWords = "";
+        String[] listOfWords = words.split(" ");
 
-        for (int i = 0; i < text.length; i++) {
+        String shortWord = listOfWords[0];
+        String longWord = listOfWords[0];
 
-            if (text[i].length() > longWord.length()) {
-                listOfLongestWords = listOfLongestWords + " " + text[i];
-                longWord = text[i];
-
+        for (String text : listOfWords) {
+            if (shortWord.length() > text.length()) {
+                shortWord = text;
             }
+            if (longWord.length() < text.length()) {
+                longWord = text;
+            }
+
         }
 
-        for (int i = 0; i < text.length; i++) {
-            if (text[i].length() <= shortestWord.length()) {
-                listOfShortestWords = listOfShortestWords + " " + text[i];
-                shortestWord = text[i];
-
+        for (String text : listOfWords) {
+            if (text.length() == shortWord.length()) {
+                System.out.println(text);
+            } else if (text.length() == longWord.length()) {
+                System.out.println(text);
             }
-        }
 
-        System.out.println("List of longest words is " + "[" + listOfLongestWords + "]");
-        System.out.println("List of shortest words is " + "[" + listOfShortestWords + "]");
+        }
+    }
+
+    public static void main(String[] args) {
+        String text = "For given text find the longest and the shortest words";
+        checkTheLengthOfWords(text);
 
     }
+
 }

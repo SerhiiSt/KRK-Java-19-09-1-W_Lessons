@@ -1,6 +1,9 @@
 package pl.itacademy.lesson6;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Words {
 
     private static void checkTheLengthOfWords(String words) {
@@ -9,6 +12,9 @@ public class Words {
 
         String shortWord = listOfWords[0];
         String longWord = listOfWords[0];
+
+        List<String> listOfShortWords = new ArrayList<>();
+        List<String> listOfLongWords = new ArrayList<>();
 
         for (String text : listOfWords) {
             if (shortWord.length() > text.length()) {
@@ -22,12 +28,15 @@ public class Words {
 
         for (String text : listOfWords) {
             if (text.length() == shortWord.length()) {
-                System.out.println(text);
+                listOfShortWords.add(text);
             } else if (text.length() == longWord.length()) {
-                System.out.println(text);
+                listOfLongWords.add(text);
             }
 
         }
+
+        System.out.println("List of short words " + listOfShortWords);
+        System.out.println("List of long words " + listOfLongWords);
     }
 
     public static void main(String[] args) {

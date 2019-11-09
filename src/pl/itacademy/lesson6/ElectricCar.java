@@ -26,10 +26,14 @@ public class ElectricCar extends Car implements Chargable, Cloneable {
     }
 
     @Override
-    protected ElectricCar clone() throws CloneNotSupportedException {
+    public ElectricCar clone() throws CloneNotSupportedException {
 
         return (ElectricCar) super.clone();
     }
 
 
+    @Override
+    public void charge() {
+        System.out.println("Electric car has been charged");
+    }
 }

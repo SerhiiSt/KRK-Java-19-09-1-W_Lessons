@@ -26,8 +26,18 @@ public class HybridCar extends Car implements Tankable, Chargable, Cloneable {
     }
 
     @Override
-    protected HybridCar clone() throws CloneNotSupportedException {
+    public HybridCar clone() throws CloneNotSupportedException {
 
         return (HybridCar) super.clone();
+    }
+
+    @Override
+    public void charge() {
+        System.out.println("Hybrid Car has been charged");
+    }
+
+    @Override
+    public void tank() {
+        System.out.println("Hybrid Car has been tanked");
     }
 }

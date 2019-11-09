@@ -11,8 +11,10 @@ public class CarTester {
         Engine electricEngine = new Engine("Electric Engine", 200);
         ElectricCar bmwi3 = new ElectricCar("BWM i3", electricEngine);
 
+
         Engine petrol = new Engine("Petrol Engine", 320);
         FuelCar mb = new FuelCar("Mercedes Benz", petrol);
+
 
 
         Engine hybridEngine = new Engine("Petrol/Electric Engine", 290);
@@ -23,12 +25,14 @@ public class CarTester {
 
         System.out.println(electricEngine);
         System.out.println(bmwi3);
+        bmwi3.charge();
 
         System.out.println(petrol);
         System.out.println(mb);
 
         System.out.println(hybridEngine);
         System.out.println(toyota);
+        toyota.tank();
 
         Engine clonedEngine = engine.clone();
         System.out.println("Cloned object " + clonedEngine);
@@ -52,14 +56,19 @@ public class CarTester {
         cars[3] = toyota;
 
 
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i] instanceof Chargable) {
-                System.out.println(cars[i]);
-                Chargable.charge();
-            } else if (cars[i] instanceof Tankable) {
-                System.out.println(cars[i]);
-                Tankable.tank();
+        System.out.println("Hash values for some objects");
+        for (Car car : cars){
+            System.out.println(car.hashCode() + " " + car.getName());
+        }
+
+        for (Car car : cars) {
+            if (car instanceof Chargable) {
+                ((Chargable) car).charge();
+
+            } if (car instanceof Tankable) {
+                ((Tankable) car).tank();
             }
+
         }
 
 

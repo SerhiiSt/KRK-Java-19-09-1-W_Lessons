@@ -60,10 +60,11 @@ public class Car implements Cloneable {
     }
 
     @Override
-    protected Car clone() throws CloneNotSupportedException {
+    public Car clone() throws CloneNotSupportedException {
 
-        return (Car) super.clone();
+        Car cloned = (Car) super.clone();
+        cloned.engine = engine.clone();
+
+        return cloned;
     }
-
-
 }

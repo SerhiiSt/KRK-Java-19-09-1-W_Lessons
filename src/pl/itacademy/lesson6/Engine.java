@@ -60,7 +60,7 @@ public class Engine implements Cloneable {
     }
 
     @Override
-    protected Engine clone() throws CloneNotSupportedException {
+    public Engine clone() throws CloneNotSupportedException {
 
         return (Engine) super.clone();
     }

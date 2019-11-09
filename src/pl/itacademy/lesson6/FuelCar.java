@@ -26,8 +26,13 @@ public class FuelCar extends Car implements Tankable, Cloneable {
     }
 
     @Override
-    protected FuelCar clone() throws CloneNotSupportedException {
+    public FuelCar clone() throws CloneNotSupportedException {
 
         return (FuelCar) super.clone();
+    }
+
+    @Override
+    public void tank() {
+        System.out.println("Fuel car has been tanked");
     }
 }

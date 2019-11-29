@@ -1,4 +1,4 @@
-package pl.itacademy.lesson7;
+package pl.itacademy.lesson8;
 
 import java.util.Set;
 import java.util.TreeSet;

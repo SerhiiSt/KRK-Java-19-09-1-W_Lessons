@@ -91,7 +91,7 @@ public enum DayOfWeek {
 
     public ArrayList<DayOfWeek> getWorkingDays() {
         for (DayOfWeek dayOfWeek : DayOfWeek.values()) {
-            if (dayOfWeek.workingDay) {
+            if (dayOfWeek.isWorkingDay()) {
                 workingDays.add(dayOfWeek);
             }
         }
@@ -100,7 +100,7 @@ public enum DayOfWeek {
 
     public ArrayList<DayOfWeek> getNonWorkingDays() {
         for (DayOfWeek dayOfWeek : DayOfWeek.values()) {
-            if (dayOfWeek.workingDay) {
+            if (!dayOfWeek.isWorkingDay()) {
                 nonWorkingDays.add(dayOfWeek);
             }
         }

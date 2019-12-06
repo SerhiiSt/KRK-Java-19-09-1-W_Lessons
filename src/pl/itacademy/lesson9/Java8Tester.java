@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
-
 public class Java8Tester {
     public static void main(String[] args) {
         Address toronto = new Address("Toronto");

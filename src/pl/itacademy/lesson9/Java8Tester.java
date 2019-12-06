@@ -21,7 +21,8 @@ public class Java8Tester {
                 new Person("Danylo", "Gal", LocalDate.of(1950, 2, 1), Sex.M, 23_600, kyiv),
                 new Person("Zanna", "Dark", LocalDate.of(1900, 1, 1), Sex.F, 50_600, leon),
                 new Person("Paul", "Bauman", LocalDate.of(1954, 2, 3), Sex.M, 16_200, warszawa),
-                new Person("Marry", "Poppins", LocalDate.of(1967, 4, 12), Sex.F, 23_700, gdansk)
+                new Person("Marry", "Poppins", LocalDate.of(1967, 4, 12), Sex.F, 23_700, gdansk),
+                new Person("Aaron", "Doberg", LocalDate.of(2006, 3, 3), Sex.M, 23_700, gdansk)
         );
 
         System.out.println("All men under 65 years : ");
@@ -111,6 +112,18 @@ public class Java8Tester {
                 .mapToInt(Person::getSalary)
                 .sum());
 
+
+        System.out.println("---------------------------------");
+        System.out.println("Does any person has first letter 'A' in firstName : ");
+        boolean answer = people.stream()
+                .anyMatch(person -> person.getFirstName().startsWith("A"));
+        System.out.println(answer);
+
+        System.out.println("---------------------------------");
+        System.out.println("Does all persons contains letter 'a' in lastName : ");
+        boolean output = people.stream()
+                .allMatch(person -> person.getLastName().contains("a"));
+        System.out.println(output);
 
     }
 }

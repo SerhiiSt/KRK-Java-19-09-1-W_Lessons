@@ -31,16 +31,17 @@ public class GenericsTester {
         bookBox.addItem(starWars);
         bookBox.addItem(fantasyWorld);
 
-        ToyShelf<Box<Toy>> toyShelf = new ToyShelf<>();
+        ToyShelf toyShelf = new ToyShelf();
         toyShelf.addItem(toyBox);
+
 
         BookShelf<Box<Book>> bookShelf = new BookShelf<>();
         bookShelf.addItem(bookBox);
 
-        UniversalShelf<Box> universalShelf = new UniversalShelf<>();
-        universalShelf.addItem(toyBox);
-        universalShelf.addItem(bookBox);
-        universalShelf.addItem(foodBox);
+        UniversalShelf universalShelf = new UniversalShelf();
+        universalShelf.addBox(toyBox);
+        universalShelf.addBox(bookBox);
+        universalShelf.addBox(foodBox);
 
     }
 }

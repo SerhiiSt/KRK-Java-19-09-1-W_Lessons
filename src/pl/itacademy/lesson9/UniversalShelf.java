@@ -3,9 +3,16 @@ package pl.itacademy.lesson9;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UniversalShelf<T> {
+public class UniversalShelf {
 
-    private List<T> items = new ArrayList<>();
+    private List<Box<?>> boxes = new ArrayList<>();
 
-    public void addItem (T item){ items.add(item);}
+    public void addBox(Box<?> box) {
+        boxes.add(box);
+    }
+
+    public List<Box<?>> getBoxes() {
+        return boxes;
+    }
 }
+
